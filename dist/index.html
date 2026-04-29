@@ -10,13 +10,11 @@
     <script src="./bundle.js"></script>
   </head>
   <body>
-    <a-scene
-      inspector
-      physics="debug: true"
-      fog="type: exponential; color: #AAAAAA; density: 0.05"
-    >
+    <a-scene inspector fog="type: exponential; color: #AAAAAA; density: 0.15">
       <a-assets>
         <a-asset-item id="terrain" src="./assets/terrain.glb"></a-asset-item>
+        <a-asset-item id="crow" src="./assets/crow.glb"></a-asset-item>
+        <a-asset-item id="horse" src="./assets/horse.glb"></a-asset-item>
       </a-assets>
       <!-- Terrain -->
       <a-entity gltf-model="#terrain" position="0 0 0"></a-entity>
@@ -31,23 +29,29 @@
       ></a-plane>
       <a-sky color="#220000"></a-sky>
       <!-- Terrain End -->
-      <a-sphere
-        position="0 5 -5"
-        radius="1.25"
-        color="#EF2D5E"
-        dynamic-body
-      ></a-sphere>
-
       <a-entity
-        id="camera"
-        visible="false"
+        gltf-model="#crow"
+        position="0.98 -0.9834 1.56032"
+        disable-frustum-culling
+        animation-mixer="loop: once; timeScale: 0.5; clampWhenFinished: true"
+      ></a-entity>
+      <a-entity gltf-model="#horse" animation-mixer></a-entity>
+      <a-entity
+        id="player_camera"
         camera
         wasd-controls="acceleration: 10"
         look-controls="pointerLockEnabled: true"
         position="0 1.6 0"
         geometry="primitive: sphere; radius: 0.5;"
         static-body
-      ></a-entity>
+      >
+        <a-entity
+          id="ui_text"
+          rotation="0 0 0"
+          position="0 0 -0.5"
+          text="value: PlaceHolder;"
+        ></a-entity>
+      </a-entity>
     </a-scene>
   </body>
 </html>
