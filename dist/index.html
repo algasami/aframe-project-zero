@@ -10,9 +10,9 @@
 		<script src="./bundle.js"></script>
 	</head>
 	<body>
-		<a-scene inspector>
-			<a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-			<a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+		<a-scene inspector physics="debug: true">
+			<a-sphere popcorn position="0 1.25 -5" radius="1.25" color="#EF2D5E" dynamic-body></a-sphere>
+			<a-plane position="0 0 -4" rotation="-90 0 0" width="400" height="400" color="#7BC8A4" static-body></a-plane>
 			<a-sky color="#220000"></a-sky>
 		</a-scene>
 	</body>

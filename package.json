@@ -9,6 +9,7 @@
     "start": "webpack serve --mode=development --open"
   },
   "dependencies": {
+    "@c-frame/aframe-physics-system": "^4.2.4",
     "aframe": "^1.7.1",
     "webpack": "^5.106.2",
     "webpack-cli": "^7.0.2"
