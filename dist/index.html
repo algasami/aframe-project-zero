@@ -37,19 +37,32 @@
       ></a-entity>
       <a-entity gltf-model="#horse" animation-mixer></a-entity>
       <a-entity
+        id="horse_trigger"
+        position="0.50316 1.3842 -4.74658"
+        spherical-trigger="radius: 2; target: #player_camera; trigger_name: horse_trigger;"
+      ></a-entity>
+      <a-entity
+        id="crow_trigger"
+        position="-3.12726 1.3842 5.26084"
+        spherical-trigger="radius: 3; target: #player_camera; trigger_name: crow_trigger"
+      ></a-entity>
+      <a-entity
         id="player_camera"
         camera
         wasd-controls="acceleration: 10"
         look-controls="pointerLockEnabled: true"
-        position="0 1.6 0"
+        rotation="0 0 0"
+        position="0 1.6 5"
         geometry="primitive: sphere; radius: 0.5;"
         static-body
       >
         <a-entity
           id="ui_text"
+          ui-text="trigger_receiver: #player_camera;"
           rotation="0 0 0"
           position="0 0 -0.5"
-          text="value: PlaceHolder;"
+          scale="0.8 0.8 0.8"
+          text="value: ;"
         ></a-entity>
       </a-entity>
     </a-scene>
